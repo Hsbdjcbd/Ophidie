@@ -139,6 +139,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="save.json" />
+    <None Include="settings.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
