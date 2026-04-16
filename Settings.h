@@ -6,7 +6,6 @@ Projet : Ophidie
 #pragma once
 
 #include <string>
-#include <fstream>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -14,8 +13,18 @@ using json = nlohmann::json;
 class Settings
 {
 private:
+	int volSound,
+		volMusic,
+		gridW,
+		gridH,
+		difficulty;
+
+	bool fullScr,
+		usingArrowKey,
+		deafMode;
 
 public:
+	Settings();
 
 };
 
@@ -24,7 +33,6 @@ TODO:
 - volume musique
 - volume sound
 - grid size
-- language
 - difficulty
 	- Longueur snake
 	- Vie
@@ -36,6 +44,7 @@ TODO:
 secondary:
 - background
 - skins
+- music choice
 - master volume
 - Mapping des touches (full mapping)
 - timer before starving
