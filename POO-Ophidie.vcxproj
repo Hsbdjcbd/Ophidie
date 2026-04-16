@@ -140,6 +140,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="save.json" />
+    <None Include="scoreboard.json" />
     <None Include="settings.json" />
   </ItemGroup>
   <ItemGroup>
