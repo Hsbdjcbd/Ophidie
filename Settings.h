@@ -10,14 +10,34 @@ Projet : Ophidie
 
 using json = nlohmann::json;
 
+enum difficulty
+{
+	BABY,
+	EZ,
+	MEDIUM_RARE,
+	MEDIUM,
+	HARD,
+	HARDER,
+	TOO_HARD,
+	HARDCORE
+};
+
+enum gameMode
+{
+	NORMAL,
+	SURVIVAL,
+	DEATH_MODE
+};
+
 class Settings
 {
 private:
 	int volSound,
 		volMusic,
 		gridW,
-		gridH,
-		difficulty;
+		gridH;
+
+	
 
 	bool fullScr,
 		usingArrowKey,
