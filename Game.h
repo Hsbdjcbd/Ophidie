@@ -1,5 +1,13 @@
 #pragma once
-class Game
-{
+#include <SFML/Audio.hpp>
+
+class Game {
+public:
+	void showEndScreen();
+
+
 };
+
+
+
 
