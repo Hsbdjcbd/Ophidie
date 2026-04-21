@@ -10,9 +10,9 @@ int main() {
     Settings settings("settings.json");
     Difficulty difficulty;
 
-    difficulty = (Difficulty)1;
+    
 
-    settings.test();
+    settings.setFullScr(-10);
 
     system("pause>NUL");
     return SUCCESS;

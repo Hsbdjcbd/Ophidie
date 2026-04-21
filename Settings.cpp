@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cassert>
 
 #include "Settings.h"
 #include "const.h"
@@ -72,6 +73,63 @@ bool Settings::getArrow()
 bool Settings::getDeaf()
 {
     return _deafMode;
+}
+
+void Settings::setSound(int sound)
+{
+    assert(sound > MIN_VOLUME && sound < MAX_VOLUME);
+
+    _volSound = sound;
+}
+
+void Settings::setMusic(int music)
+{
+    assert(music > MIN_VOLUME && music < MAX_VOLUME);
+
+    _volMusic = music;
+}
+
+void Settings::setWidth(int width)
+{
+    assert(width > MIN_GRID_SIZE && width < MAX_GRID_SIZE);
+
+    _gridW = width;
+}
+
+void Settings::setHeight(int height)
+{
+    assert(height > MIN_GRID_SIZE && height < MAX_GRID_SIZE);
+
+    _gridH = height;
+}
+
+void Settings::setDifficulty(Difficulty difficulty)
+{
+    assert(difficulty >= BABY && difficulty <= HARDCORE);
+
+    _difficulty = difficulty;
+}
+
+void Settings::setMode(GameMode mode)
+{
+    assert(mode >= NORMAL && mode <= SURVIVE_HELL);
+
+    _mode = mode;
+}
+
+void Settings::setFullScr(bool fullScr)
+{
+    _fullScr = fullScr;
+}
+
+void Settings::setArrow(bool arrow)
+{
+    _usingArrowKeys = arrow;
+}
+
+void Settings::setDeaf(bool deaf)
+{
+    _deafMode = deaf;
 }
 
 

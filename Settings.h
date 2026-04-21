@@ -59,6 +59,16 @@ public:
 	bool getFullScr();
 	bool getArrow();
 	bool getDeaf();
+
+	void setSound(int sound);
+	void setMusic(int music);
+	void setWidth(int width);
+	void setHeight(int height);
+	void setDifficulty(Difficulty difficulty);
+	void setMode(GameMode mode);
+	void setFullScr(bool fullScr);
+	void setArrow(bool arrow);
+	void setDeaf(bool deaf);
 };
 
 /*
