@@ -1,9 +1,19 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <SFML/graphics.hpp>
+#include <string>
+
+#include "const.h"
+#include "Settings.h"
 
 int main() {
-    std::cout << "Hello, world!";
+    Settings settings("settings.json");
+    Difficulty difficulty;
+
+    
+
+    settings.setFullScr(-10);
 
     system("pause>NUL");
-    return 0;
+    return SUCCESS;
 }

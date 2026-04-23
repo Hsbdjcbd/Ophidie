@@ -138,10 +138,9 @@
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BD\save.json" />
+    <None Include="BD\settings.json" />
     <None Include="packages.config" />
-    <None Include="save.json" />
-    <None Include="scoreboard.json" />
-    <None Include="settings.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />

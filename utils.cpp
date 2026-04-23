@@ -1,6 +1,8 @@
 #include <assert.h>
+#include <fstream>
 
 #include "utils.h"
+#include "const.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -36,4 +38,24 @@ void displayCursor(bool visible)
 	cci.bVisible = visible;
 	SetConsoleCursorInfo(hConsole, &cci);
 #endif
+}
+
+void openFile(std::fstream& stream, const std::string& fileName, bool read)
+{
+	if (read)
+		stream.open(fileName, std::ios::in);
+	else
+		stream.open(fileName, std::ios::out);
+
+	if (!stream)
+	{
+		std::cerr << "Error: file could not be opened";
+		system("pause>NUL");
+		exit(FILE_NOT_OPENED);
+	}
+}
+
+void closeFile(std::fstream& stream)
+{
+	stream.close();
 }
