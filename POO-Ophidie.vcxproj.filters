@@ -13,11 +13,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers de ressources\BD">
-      <UniqueIdentifier>{2df33b40-df8a-4d39-b4f8-a7c77ed6e5d6}</UniqueIdentifier>
+    <Filter Include="Fichiers de ressources\data">
+      <UniqueIdentifier>{ce4a580a-eb3d-4f66-aaef-3255709e20ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers de ressources\Scoreboard">
-      <UniqueIdentifier>{6d15de04-bda4-47f0-b771-4ada9e34ec95}</UniqueIdentifier>
+    <Filter Include="Fichiers de ressources\assets">
+      <UniqueIdentifier>{a65ad973-5913-4537-b1e1-94b216aa6c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\assets\images">
+      <UniqueIdentifier>{1e6a2af7-aa6c-49fa-8ca3-0abafc028f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\assets\fonts">
+      <UniqueIdentifier>{0eb86846-9c47-48ba-807b-cb90397a80e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\assets\audio">
+      <UniqueIdentifier>{e62831f2-bf01-4ca8-b5b5-b2e9dc91d70f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\data\scoreboards">
+      <UniqueIdentifier>{2c751d79-4e0f-4603-8f5d-2f259cfc982c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,23 +69,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="BD\save.json">
-      <Filter>Fichiers de ressources\BD</Filter>
+    <None Include="data\save.json">
+      <Filter>Fichiers de ressources\data</Filter>
     </None>
-    <None Include="BD\settings.json">
-      <Filter>Fichiers de ressources\BD</Filter>
+    <None Include="data\settings.json">
+      <Filter>Fichiers de ressources\data</Filter>
     </None>
-    <None Include="res\scoreboard\DEATH_TRAP_SCOREBOARD">
-      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    <None Include="data\scoreboards\DEATH_TRAP_SCOREBOARD">
+      <Filter>Fichiers de ressources\data\scoreboards</Filter>
     </None>
-    <None Include="res\scoreboard\NORMAL_SCOREBOARD">
-      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    <None Include="data\scoreboards\NORMAL_SCOREBOARD">
+      <Filter>Fichiers de ressources\data\scoreboards</Filter>
     </None>
-    <None Include="res\scoreboard\SURVIVAL_SCOREBOARD">
-      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    <None Include="data\scoreboards\SURVIVAL_SCOREBOARD">
+      <Filter>Fichiers de ressources\data\scoreboards</Filter>
     </None>
-    <None Include="res\scoreboard\SURVIVE_HELL_SCOREBOARD">
-      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    <None Include="data\scoreboards\SURVIVE_HELL_SCOREBOARD">
+      <Filter>Fichiers de ressources\data\scoreboards</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -110,5 +122,10 @@
     <ClInclude Include="Save.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\PressStart2P.ttf">
+      <Filter>Fichiers de ressources\assets\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

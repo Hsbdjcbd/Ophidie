@@ -5,9 +5,9 @@ Projet : Ophidie
 
 #pragma once
 
-#include <iostream>  // TODO: Switch to SFML ?
 #include <algorithm>
 #include <string>
+#include <fstream>
 
 #ifndef WIN32
 #include <cassert>
@@ -18,3 +18,4 @@ void sleepMs(int ms);
 // Gestion des fichiers
 void openFile(std::fstream& stream, const std::string& fileName, bool read);
 void closeFile(std::fstream& stream);
+void isFileOpen(std::fstream& stream);

@@ -12,6 +12,8 @@ Projet : Ophidie
 #include "utils.h"
 #include "const.h"
 
+ using json = nlohmann::json;
+
 // Constructeur
 Settings::Settings()
 {

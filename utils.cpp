@@ -32,16 +32,25 @@ void openFile(std::fstream &stream, const std::string &fileName, bool read)
 		stream.open(fileName, std::ios::in);
 	else
 		stream.open(fileName, std::ios::out);
-
-	if (!stream)
-	{
-		std::cerr << "Error: file could not be opened";
-		system("pause>NUL");
-		exit(FILE_NOT_OPENED);
-	}
+	isFileOpen(stream);
 }
 
 void closeFile(std::fstream &stream)
 {
 	stream.close();
+}
+
+void isFileOpen(std::fstream& stream)
+{
+	if (!stream)
+	{
+		std::cerr << "Error: file could not be opened"; // TODO: Switch to SFML
+#ifdef WIN32
+		system("pause>NUL");
+#else
+		std::cin.get();
+#endif
+
+		exit(FILE_NOT_OPENED);
+	}
 }

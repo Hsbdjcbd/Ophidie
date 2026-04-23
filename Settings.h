@@ -9,8 +9,6 @@ Projet : Ophidie
 
 #include "const.h"
 
-using json = nlohmann::json;
-
 enum Difficulty
 {
 	BABY,

@@ -13,3 +13,5 @@ SpaceAfterTemplateKeyword: true
 
 SortIncludes: CaseSensitive
 IncludeBlocks: Regroup
+
+ReferenceAlignment: Left

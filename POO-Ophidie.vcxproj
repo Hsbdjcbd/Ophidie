@@ -138,13 +138,13 @@
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BD\save.json" />
-    <None Include="BD\settings.json" />
+    <None Include="data\save.json" />
+    <None Include="data\scoreboards\DEATH_TRAP_SCOREBOARD" />
+    <None Include="data\scoreboards\NORMAL_SCOREBOARD" />
+    <None Include="data\scoreboards\SURVIVAL_SCOREBOARD" />
+    <None Include="data\scoreboards\SURVIVE_HELL_SCOREBOARD" />
+    <None Include="data\settings.json" />
     <None Include="packages.config" />
-    <None Include="res\scoreboard\DEATH_TRAP_SCOREBOARD" />
-    <None Include="res\scoreboard\NORMAL_SCOREBOARD" />
-    <None Include="res\scoreboard\SURVIVAL_SCOREBOARD" />
-    <None Include="res\scoreboard\SURVIVE_HELL_SCOREBOARD" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
@@ -158,6 +158,9 @@
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\PressStart2P.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

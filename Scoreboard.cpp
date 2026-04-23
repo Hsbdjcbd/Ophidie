@@ -16,23 +16,6 @@ const std::string Scoreboard::filePaths[] =
 	SCOREBOARD_FILEPATH + "SURVIVE_HELL_SCOREBOARD"
 };
 
-void openFile(std::fstream& file,std::string filepath)
-{
-	file.open(filepath, std::ios::in | std::ios::out);
-	if (!file.is_open())
-	{
-		std::cerr << "Failed to open file : " << filepath; // TODO: Switch to SFML
-#ifdef WIN32
-		system("pause>NUL");
-#else
-		std::cin.get();
-#endif
-
-		exit(FILE_NOT_OPENED);
-	}
-}
-
-
 // Constructeur
 Scoreboard::Scoreboard()
 {
@@ -52,7 +35,7 @@ void Scoreboard::loadData()
 
 	for (const auto & filePath : filePaths)
 	{
-		openFile(file, filePath);
+		openFile(file, filePath, true);
 		for (int i = 0; i < NUMBER_OF_SCORES; i++)
 		{
 			if (file.eof())
@@ -71,7 +54,7 @@ void Scoreboard::writeData() const
 
 	for (const auto & filePath : filePaths)
 	{
-		openFile(file, filePath);
+		openFile(file, filePath, false);
 		for (int i = 0; i < NUMBER_OF_SCORES; i++)
 		{
 			file << _scoreboardData[j][i];
