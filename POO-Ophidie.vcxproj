@@ -141,6 +141,10 @@
     <None Include="BD\save.json" />
     <None Include="BD\settings.json" />
     <None Include="packages.config" />
+    <None Include="res\scoreboard\DEATH_TRAP_SCOREBOARD" />
+    <None Include="res\scoreboard\NORMAL_SCOREBOARD" />
+    <None Include="res\scoreboard\SURVIVAL_SCOREBOARD" />
+    <None Include="res\scoreboard\SURVIVE_HELL_SCOREBOARD" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />

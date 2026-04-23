@@ -16,6 +16,9 @@
     <Filter Include="Fichiers de ressources\BD">
       <UniqueIdentifier>{2df33b40-df8a-4d39-b4f8-a7c77ed6e5d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers de ressources\Scoreboard">
+      <UniqueIdentifier>{6d15de04-bda4-47f0-b771-4ada9e34ec95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,8 +63,17 @@
     <None Include="BD\settings.json">
       <Filter>Fichiers de ressources\BD</Filter>
     </None>
-    <None Include="scoreboard.json">
-      <Filter>Fichiers de ressources</Filter>
+    <None Include="res\scoreboard\DEATH_TRAP_SCOREBOARD">
+      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    </None>
+    <None Include="res\scoreboard\NORMAL_SCOREBOARD">
+      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    </None>
+    <None Include="res\scoreboard\SURVIVAL_SCOREBOARD">
+      <Filter>Fichiers de ressources\Scoreboard</Filter>
+    </None>
+    <None Include="res\scoreboard\SURVIVE_HELL_SCOREBOARD">
+      <Filter>Fichiers de ressources\Scoreboard</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
