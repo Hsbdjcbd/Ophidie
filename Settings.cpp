@@ -1,106 +1,105 @@
+/*====================================
+Auteur : Vincent Gagnon
+Projet : Ophidie
+====================================*/
+
 #include <iostream>
 #include <fstream>
 #include <cassert>
 
 #include "Settings.h"
+#include "utils.h"
 #include "const.h"
 
 using json = nlohmann::json;
 
-Settings::Settings(std::string fichier)
+// Constructeur
+Settings::Settings()
 {
-    std::ifstream file("settings.json");
-    if (!file.is_open())
-    {
-        std::cerr << "Error: file could not be opened";
-        system("pause>NUL");
-        exit(FILE_NOT_OPENED);
-    }
-
-    json settings = json::parse(file);
-
-    _difficulty = Difficulty(settings["Difficulty"]);
-    _mode = GameMode(settings["Mode"]);
-    _gridW = settings["Width"];
-    _gridH = settings["Height"];
-    _volSound = settings["Sound"];
-    _volMusic = settings["Music"];
-    _fullScr = settings["FullScreen"];
-    _usingArrowKeys = settings["Arrow"];
-    _deafMode = settings["Deaf"];
+    readFile();
 }
 
-int Settings::getSound()
+// Destructeur
+Settings::~Settings()
+{
+    _gridH = _gridW = _volSound = _volMusic = _fullScr = _usingArrowKeys = _deafMode = 0;
+    _difficulty = BABY;
+    _mode = NORMAL;
+}
+
+// Getteurs
+unsigned int Settings::getSound() const
 {
     return _volSound;
 }
 
-int Settings::getMusic()
+unsigned int Settings::getMusic() const
 {
     return _volMusic;
 }
 
-int Settings::getWidth()
+unsigned int Settings::getWidth() const
 {
     return _gridW;
 }
 
-int Settings::getHeight()
+unsigned int Settings::getHeight() const
 {
     return _gridH;
 }
 
-Difficulty Settings::getDifficulty()
+Difficulty Settings::getDifficulty() const
 {
     return _difficulty;
 }
 
-GameMode Settings::getMode()
+GameMode Settings::getMode() const
 {
     return _mode;
 }
 
-bool Settings::getFullScr()
+bool Settings::getFullScr() const
 {
     return _fullScr;
 }
 
-bool Settings::getArrow()
+bool Settings::getArrow() const
 {
     return _usingArrowKeys;
 }
 
-bool Settings::getDeaf()
+bool Settings::getDeaf() const
 {
     return _deafMode;
 }
 
-void Settings::setSound(int sound)
+// Setteurs
+void Settings::setSound(unsigned int volSound)
 {
-    assert(sound > MIN_VOLUME && sound < MAX_VOLUME);
+    assert(volSound >= MIN_VOLUME && volSound <= MAX_VOLUME);
 
-    _volSound = sound;
+    _volSound = volSound;
 }
 
-void Settings::setMusic(int music)
+void Settings::setMusic(unsigned int volMusic)
 {
-    assert(music > MIN_VOLUME && music < MAX_VOLUME);
+    assert(volMusic >= MIN_VOLUME && volMusic <= MAX_VOLUME);
 
-    _volMusic = music;
+    _volMusic = volMusic;
 }
 
-void Settings::setWidth(int width)
+void Settings::setWidth(unsigned int gridW)
 {
-    assert(width > MIN_GRID_SIZE && width < MAX_GRID_SIZE);
+    assert(gridW >= MIN_GRID_SIZE && gridW <= MAX_GRID_SIZE);
 
-    _gridW = width;
+    _gridW = gridW;
 }
 
-void Settings::setHeight(int height)
+void Settings::setHeight(unsigned int gridH)
 {
-    assert(height > MIN_GRID_SIZE && height < MAX_GRID_SIZE);
+    assert(gridH >= MIN_GRID_SIZE && gridH <= MAX_GRID_SIZE);
 
-    _gridH = height;
+    _gridH = gridH;
 }
 
 void Settings::setDifficulty(Difficulty difficulty)
@@ -122,27 +121,68 @@ void Settings::setFullScr(bool fullScr)
     _fullScr = fullScr;
 }
 
-void Settings::setArrow(bool arrow)
+void Settings::setArrow(bool usingArrow)
 {
-    _usingArrowKeys = arrow;
+    _usingArrowKeys = usingArrow;
 }
 
-void Settings::setDeaf(bool deaf)
+void Settings::setDeaf(bool deafMode)
 {
-    _deafMode = deaf;
+    _deafMode = deafMode;
 }
 
+// Setteurs complexes
+void Settings::setGrid(int gridW, int gridH)
+{
+    setWidth(gridW);
+    setHeight(gridH);
+}
 
+void Settings::setVolume(int volSound, int volMusic)
+{
+    setSound(volSound);
+    setMusic(volMusic);
+}
 
-//int volSound,
-//volMusic,
-//gridW,
-//gridH;
-//
-//Difficulty difficulty;
-//
-//GameMode mode;
-//
-//bool fullScr,
-//usingArrowKey,
-//deafMode;
+// Lecture/Écriture de la BD
+void Settings::readFile()
+{
+    std::fstream input;
+
+    openFile(input, SETTINGS_FILE_NAME, true);
+
+    json settings = json::parse(input);
+
+    setDifficulty(Difficulty(settings["Difficulty"]));
+    setMode(GameMode(settings["Mode"]));
+    setGrid(settings["Width"], settings["Height"]);
+    setVolume(settings["Sound"], settings["Music"]);
+    setFullScr(settings["FullScreen"]);
+    setArrow(settings["Arrow"]);
+    setDeaf(settings["Deaf"]);
+    
+    closeFile(input);
+}
+
+void Settings::saveSettings()
+{
+    std::fstream output;
+
+    json settings;
+
+    settings["Difficulty"] = _difficulty;
+    settings["Mode"] = _mode;
+    settings["Width"] = _gridW;
+    settings["Height"] = _gridH;
+    settings["Sound"] = _volSound;
+    settings["Music"] = _volMusic;
+    settings["FullScreen"] = _fullScr;
+    settings["Arrow"] = _usingArrowKeys;
+    settings["Deaf"] = _deafMode;
+
+    openFile(output, SETTINGS_FILE_NAME, false);
+
+    output << std::setw(2) << settings;
+    
+    closeFile(output);
+}

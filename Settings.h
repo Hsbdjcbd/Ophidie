@@ -33,7 +33,7 @@ enum GameMode
 class Settings
 {
 private:
-	int _volSound,
+	unsigned int _volSound,
 		_volMusic,
 		_gridW,
 		_gridH;
@@ -47,49 +47,39 @@ private:
 		_deafMode;
 
 public:
-	Settings() = delete;
-	Settings(std::string fichier);
+	// Constructeur
+	Settings();
 
-	int getSound();
-	int getMusic();
-	int getWidth();
-	int getHeight();
-	Difficulty getDifficulty();
-	GameMode getMode();
-	bool getFullScr();
-	bool getArrow();
-	bool getDeaf();
+	// Destructeur
+	~Settings();
 
-	void setSound(int sound);
-	void setMusic(int music);
-	void setWidth(int width);
-	void setHeight(int height);
+	// Getteurs
+	unsigned int getSound() const;
+	unsigned int getMusic() const;
+	unsigned int getWidth() const;
+	unsigned int getHeight() const;
+	Difficulty getDifficulty() const;
+	GameMode getMode() const;
+	bool getFullScr() const;
+	bool getArrow() const;
+	bool getDeaf() const;
+
+	// Setteurs
+	void setSound(unsigned int volSound);
+	void setMusic(unsigned int volMusic);
+	void setWidth(unsigned int gridW);
+	void setHeight(unsigned int gridH);
 	void setDifficulty(Difficulty difficulty);
 	void setMode(GameMode mode);
 	void setFullScr(bool fullScr);
-	void setArrow(bool arrow);
-	void setDeaf(bool deaf);
+	void setArrow(bool usingArrow);
+	void setDeaf(bool deafMode);
+
+	// Setteurs complexes
+	void setGrid(int gridW, int gridH);
+	void setVolume(int volSound, int volMusic);
+
+	// Lecture/Écriture de la BD
+	void readFile();
+	void saveSettings();
 };
-
-/*
-TODO:
-- volume musique
-- volume sound
-- grid size
-- difficulty
-	- Longueur snake
-	- Vie
-	- Vitesse
-	- Egg point
-- full screen mode
-- Mapping des touches (wasd vs arrow key)
-
-secondary:
-- background
-- skins
-- music choice
-- master volume
-- Mapping des touches (full mapping)
-- timer before starving
-
-*/
