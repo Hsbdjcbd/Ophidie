@@ -1,0 +1,15 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+ColumnLimit: 0
+
+BreakBeforeBraces: Allman
+
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInAngles: false
+SpaceAfterTemplateKeyword: true
+
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
