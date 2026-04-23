@@ -1,6 +1,26 @@
+/*====================================
+Auteur : Jérémy Hébert, Vincent Gagnon et Félix-Antoine Lacroix
+Projet : Ophidie
+====================================*/
+
 #pragma once
+#include <string>
+
+// Constantes pour le scoreboard
+constexpr int NUMBER_OF_SCORES = 10;
 
 // Constantes pour l'ensemble de la solution
+enum GameMode {
+	NORMAL,
+	SURVIVAL,
+	DEATH_TRAP,
+	SURVIVE_HELL,
+
+	total // leave last
+};
+
+const std::string SCOREBOARD_FILEPATH = "res/scoreboard/";
+
 enum ERROR
 {
 	SUCCESS,
