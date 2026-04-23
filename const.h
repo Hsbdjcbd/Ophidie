@@ -10,7 +10,8 @@ Projet : Ophidie
 constexpr int NUMBER_OF_SCORES = 10;
 
 // Constantes pour l'ensemble de la solution
-enum GameMode {
+enum GameMode
+{
 	NORMAL,
 	SURVIVAL,
 	DEATH_TRAP,
@@ -21,7 +22,7 @@ enum GameMode {
 
 const std::string SCOREBOARD_FILEPATH = "res/scoreboard/";
 
-enum ERROR
+enum ErrorCode
 {
 	SUCCESS,
 	FILE_NOT_OPENED

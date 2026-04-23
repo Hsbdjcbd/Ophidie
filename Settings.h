@@ -6,7 +6,8 @@ Projet : Ophidie
 #pragma once
 
 #include <string>
-#include <nlohmann/json.hpp>
+
+#include "const.h"
 
 using json = nlohmann::json;
 
@@ -20,14 +21,6 @@ enum Difficulty
 	HARDER,
 	TOO_HARD,
 	HARDCORE
-};
-
-enum GameMode
-{
-	NORMAL,
-	SURVIVAL,
-	DEATH_TRAP,
-	SURVIVE_HELL
 };
 
 class Settings

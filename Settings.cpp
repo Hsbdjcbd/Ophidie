@@ -3,6 +3,7 @@ Auteur : Vincent Gagnon
 Projet : Ophidie
 ====================================*/
 
+#include <nlohmann/json.hpp>
 #include <iostream>
 #include <fstream>
 #include <cassert>
@@ -10,8 +11,6 @@ Projet : Ophidie
 #include "Settings.h"
 #include "utils.h"
 #include "const.h"
-
-using json = nlohmann::json;
 
 // Constructeur
 Settings::Settings()

@@ -15,5 +15,6 @@ Projet : Ophidie
 
 void sleepMs(int ms);
 
+// Gestion des fichiers
 void openFile(std::fstream& stream, const std::string& fileName, bool read);
 void closeFile(std::fstream& stream);
