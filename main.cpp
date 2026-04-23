@@ -1,5 +1,5 @@
 /*====================================
-Auteurs : Jérémy Hébert, Vincent Gagnon et Félix-Antoine Lacroix
+Auteurs : J�r�my H�bert, Vincent Gagnon et F�lix-Antoine Lacroix
 Projet : Ophidie
 ====================================*/
 
@@ -11,5 +11,5 @@ int main() {
     std::cout << "Hello world!";
     system("pause>NUL");
 
-    return SUCCESS;
+    return 0;
 }
