@@ -11,5 +11,5 @@ int main() {
     std::cout << "Hello world!";
     system("pause>NUL");
 
-    return 0;
+    return SUCCESS;
 }
