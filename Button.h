@@ -7,6 +7,10 @@ private:
 	sf::Color _fillColor, _outlineColor;
 	sf::Vector2f _scale, _position;
 
+	sf::SoundBuffer _mainMusicBuffer;
+	sf::Sound _mainMusic;
+
+
 	unsigned int _buttonID;
 	bool _isMouseReleased;
 
