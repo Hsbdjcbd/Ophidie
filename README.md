@@ -14,3 +14,6 @@ secondary:
 - master volume
 - Mapping des touches (full mapping)
 - timer before starving
+
+primary:
+-Add lion finder 2.0
